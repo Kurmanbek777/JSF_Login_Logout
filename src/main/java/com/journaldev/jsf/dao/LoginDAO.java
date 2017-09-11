@@ -15,7 +15,7 @@ public class LoginDAO {
 
 		try {
 			con = DataConnect.getConnection();
-			ps = con.prepareStatement("Select login, password from users where login = ? and password = ?");
+			ps = con.prepareStatement("Select login, password from jdbc:postgresql://localhost:5432/123.users where login = ? and password = ?");
 			ps.setString(1, user);
 			ps.setString(2, password);
 

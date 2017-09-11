@@ -2,6 +2,7 @@ package com.journaldev.jsf.util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 
 public class DataConnect {
 
@@ -9,7 +10,7 @@ public class DataConnect {
 		try {
 			Class.forName("org.postgresql.Driver");
 			Connection con = DriverManager.getConnection(
-					"jdbc:postgresql://localhost:5432/123", "postgresql", "root");
+					"jdbc:postgresql://localhost:5432/123", "postgres", "root");
 			return con;
 		} catch (Exception ex) {
 			System.out.println("Database.getConnection() Error -->"
